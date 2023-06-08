@@ -36,11 +36,11 @@ The project is divided in eleven (11) milestones and one exercise.
 - Milestone 11: Add API endpoints
 - Exercise: API documentation
   
-
+## ER Diagram
 <p align="center">
-  <img src="./images/blog_user_all_posts.png" alt="All posts by a given user page wireframe"  width="250px"  />
-  <img src="./images/blog_single_post.png" alt="Single post page wireframe"  width="250px"  />
-</p>
+  <img src="./app/assets/images/blog_app_erd.png" alt="All posts by a given user page wireframe"  width="250px"  />
+  <!-- <img src="./images/blog_single_post.png" alt="Single post page wireframe"  width="250px"  />
+</p> -->
 
 ## 🛠 Built With <a name="built-with"></a>
 
