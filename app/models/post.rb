@@ -9,7 +9,6 @@ class Post < ApplicationRecord
 
   after_save :update_posts_counter
 
-
   def update_posts_counter
     user.posts_counter += 1
   end
