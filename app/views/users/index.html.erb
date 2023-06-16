@@ -1,1 +1,6 @@
-<h1>All Posts</h1>
+<% content_for :title, "Blog App" %>
+<section class="usersContainer">
+  <% @user.each do |user| %>
+    <%= render "user", user: user %>
+  <% end %>
+</section>
