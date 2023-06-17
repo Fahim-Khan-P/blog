@@ -7,5 +7,12 @@
     </aside>
   </div>
 
+  <p><%= post.title %></p>
+  <% puts "*******************************************"%>
+  <% puts @like_user%>
+  <% puts "**************************************"%>
   <p><%= post.text %></p>
+  <%= form_with model: @like, url: user_post_likes_path(author_id: @like_user.id, post_id: post.id), method: :post do |f| %>
+    <%= f.submit "Like" %>
+  <% end %>
 </div>
