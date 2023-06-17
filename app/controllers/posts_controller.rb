@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     @comment.author_id = current_user.id
     redirect_to user_post_path if @comment.save
   end
-  
+
   private
 
   def post_params
