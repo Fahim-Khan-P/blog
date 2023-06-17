@@ -3,7 +3,11 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.post = Post.find(params[:post_id])
     @comment.author_id = current_user.id
-    redirect_to user_post_path(id: @comment.post_id) if @comment.save
+    if @comment.save
+      redirect_to user_post_path(id: @comment.post_id), notice: 'Comment added!'
+    else
+      redirect_to user_post_path(id: @comment.post_id), alert: 'Error creating comment.'
+    end
   end
 
   def new
