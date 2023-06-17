@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     @post.likes_counter = 0
     @post.comments_counter = 0
     return unless @post.save
+
     if @post.save
       redirect_to user_posts_path, notice: 'Created post!'
     else
