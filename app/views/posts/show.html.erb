@@ -3,7 +3,7 @@
 <%= render "user_post", post: @post%>
 <p> <%= @user.posts_counters%> </p>
 <div class="commentsDiv">
-  <% @post.comments.each do |comment| %>
+  <% @comments.each do |comment| %>
     <div >
       <p>
         <span><strong><%= comment.user.name %>:</strong></span>
