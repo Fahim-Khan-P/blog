@@ -23,6 +23,10 @@ RSpec.describe 'PostIndex', type: :feature do
     it 'displays the user name' do
       expect(page).to have_content(@user.name)
     end
+    it 'dispalys user image' do
+      visit users_path
+      expect(page).to have_css("img[src='https://unsplash.com/photos/WNoLnJo7tS8']")
+    end
     it 'displays the user posts counter' do
       expect(page).to have_content(@user.posts_counter)
     end

@@ -43,5 +43,10 @@ RSpec.describe 'UsersIndex', type: :feature do
       expect(page).to have_link(@user4.name, href: user_path(@user4))
       expect(page).to have_link(@user5.name, href: user_path(@user5))
     end
+    it 'redirects to user show page when user is clicked' do
+      visit users_path
+      find("a[href='#{user_path(@user)}']").click
+      expect(current_path).to eq(user_path(@user))
+    end
   end
 end
