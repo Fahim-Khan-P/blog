@@ -1,0 +1,21 @@
+<% content_for :title, "#{@user.name} | #{@post.title}" %>
+<div class="mainContainer">
+<%= render "user_post", post: @post%>
+<p> <%= @user.posts_counters%> </p>
+<div class="commentsDiv">
+  <% @comments.each do |comment| %>
+    <div >
+      <p>
+        <span><strong><%= comment.user.name %>:</strong></span>
+        <span><%= comment.text %></span>
+      </p>
+    </div>
+  <% end %>
+  </div>
+  <%= form_with model: @comment, url: user_post_comments_path(post_id: @post.id), method: :post, scope: :comment do |f| %>
+    <div>
+      <%= f.text_area :text, placeholder: "Add Comment" %>
+      <%= f.submit "Comment" %>
+    </div>
+  <% end %>
+</div>

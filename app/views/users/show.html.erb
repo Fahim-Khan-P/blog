@@ -1,0 +1,22 @@
+<% content_for :title, "#{@user.name}' Blog" %>
+<section class="userDetailsSection">
+  <%= render "user", user: @user, like_user: @like_user %>
+  <div class="bio">
+    <h3>Bio</h3>
+      <p class='bioDesc'><%= @user.bio %></p>
+  </div>
+  <br>
+  <%= link_to  new_user_post_path(@user) do %>
+    <button type="button" class="seeAllPosts">Create Post</button>
+  <% end %>
+  <div class='recentPosts'>
+    <% @user.recent_posts.each do |post| %>
+      <%= link_to user_post_path(@user, post) do %>
+        <%= render "posts/post", post: post %>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to user_posts_path(@user) do %>
+    <button type="button" class="seeAllPosts">See all posts</button>
+  <% end %>
+</section>
