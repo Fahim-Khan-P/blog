@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.includes(:posts).find(params[:user_id])
     @posts = @user.posts.includes(:comments)
@@ -27,6 +29,13 @@ class PostsController < ApplicationController
     else
       redirect_to user_posts_path, alert: 'Error creating post.'
     end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.decrement_posts_counter
+    post.destroy
+    redirect_to user_path(id: current_user.id)
   end
 
   private

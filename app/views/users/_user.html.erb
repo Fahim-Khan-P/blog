@@ -1,7 +1,7 @@
-<%= link_to user_path(user) do %>
+<%= link_to user_path(id:user.id) do %>
   <div class="userCard">
     <div class="userCardLeft">
-       <%= image_tag user.photo, alt: "#{user.name}-avatar", class: 'profile-image' %>
+      <img src=<%= user.photo %> id=<%= user.name%> alt=<%= user.name%>/>
     </div>
     <div class="userCardRight">
       <h3 class="username"><%= user.name %></h3>
