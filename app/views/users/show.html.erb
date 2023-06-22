@@ -6,7 +6,7 @@
       <p class='bioDesc'><%= @user.bio %></p>
   </div>
   <br>
-  <%= link_to  new_user_post_path(@user) do %>
+  <%= link_to  new_user_post_path(user_id: @user.id) do %>
     <button type="button" class="seeAllPosts">Create Post</button>
   <% end %>
   <div class='recentPosts'>

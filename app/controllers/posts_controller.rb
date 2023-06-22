@@ -32,8 +32,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    Post.delete(params[:id])
-    redirect_to user_posts_path
+    post = Post.find(params[:id])
+    post.decrement_posts_counter
+    post.destroy
+    redirect_to user_path(id: current_user.id)
   end
 
   private
